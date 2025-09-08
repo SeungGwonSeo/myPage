@@ -92,40 +92,19 @@ const MeteorShowerBackground: React.FC<MeteorShowerBackgroundProps> = ({
               background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%)',
             }}
           />
-          {/* 유성 꼬리 - 글래스 효과 */}
+          {/* 유성 꼬리 */}
           <div
-            className="absolute -bottom-4 -right-2 backdrop-blur-sm border-l border-white/20"
+            className="absolute"
             style={{
-              width: `${meteor.size * 40}px`,
-              height: `${meteor.size * 4}px`,
-              transform: 'rotate(45deg)',
-              transformOrigin: 'right center',
-              borderRadius: '0 60px 60px 0',
-              background: `
-                linear-gradient(90deg, 
-                  transparent 0%,
-                  rgba(255, 255, 255, 0.1) 20%,
-                  rgba(147, 197, 253, 0.3) 60%,
-                  rgba(255, 255, 255, 0.7) 100%
-                )
-              `,
-              boxShadow: `
-                0 0 ${meteor.size * 6}px rgba(147, 197, 253, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2)
-              `,
+              left: `-${meteor.size * 50}px`,
+              width: `${meteor.size * 100}px`,
+              height: `${meteor.size * 0.5}px`,
+              background: 'linear-gradient(to left, #fff0, #ffffff)',
+              transform: 'rotateZ(-140deg) translateX(50%)',
+              top: `-${meteor.size * 0.75}px`
             }}
-          />
-          {/* 추가 꼬리 효과 - 내부 글로우 */}
-          <div
-            className="absolute -bottom-3 -right-1 bg-gradient-to-r from-transparent via-purple-300 to-blue-200 opacity-60"
-            style={{
-              width: `${meteor.size * 35}px`,
-              height: `${meteor.size * 2}px`,
-              transform: 'rotate(45deg)',
-              transformOrigin: 'right center',
-              borderRadius: '0 50px 50px 0',
-            }}
-          />
+            />
+          
         </div>
         
       ))}
@@ -140,14 +119,14 @@ const MeteorShowerBackground: React.FC<MeteorShowerBackgroundProps> = ({
         {`
           @keyframes meteor-fall {
             0% {
-              transform: translateY(-100vh) translateX(-150px) rotate(0deg);
+              transform: translateY(-100vh) translateX(-25vw) rotate(0deg);
               opacity: 0;
             }
             70% {
               opacity: 1;
             }
             100% {
-              transform: translateY(100vh) translateX(150px) rotate(0deg);
+              transform: translateY(100vh) translateX(25vw) rotate(0deg);
               opacity: 0;
             }
           }

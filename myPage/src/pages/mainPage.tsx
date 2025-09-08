@@ -6,8 +6,8 @@ const MainPage = () => {
   return (
     <MeteorShowerBackground 
       className="min-h-screen"
-      meteorCount={10}
-      starCount={100}
+      meteorCount={15}
+      starCount={50}
     >
       {/* 메인 컨텐츠 */}
       <div className="flex items-center justify-center min-h-screen">
